@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# If the request is for an existing file or directory, serve it directly.
+# This ensures CSS, JS, images, etc. are loaded normally.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route everything else through the front controller.
+RewriteRule ^(.*)$ index.php [QSA,L]
