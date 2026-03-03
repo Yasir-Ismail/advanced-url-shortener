@@ -84,55 +84,6 @@ http://localhost/url-shortener/
 
 ---
 
-## Folder Structure
-
-```
-/url-shortener
-│
-├── .htaccess              # Apache rewrite rules → front controller
-├── index.php              # Front controller / router
-│
-├── config/
-│   └── db.php             # Database config, constants, PDO singleton
-│
-├── includes/
-│   ├── helpers.php         # Sanitization, validation, CSRF, formatting
-│   ├── shortcode.php       # CSPRNG-based short code generation
-│   ├── links.php           # Link CRUD & status logic
-│   └── clicks.php          # Click logging & analytics queries
-│
-├── public/
-│   ├── index.php           # Create link page (landing)
-│   ├── dashboard.php       # Analytics dashboard (overview)
-│   └── redirect.php        # Redirect handler (performance-critical)
-│
-├── admin/
-│   ├── links.php           # Link management (toggle, delete)
-│   └── analytics.php       # Per-link deep analytics
-│
-├── api/
-│   ├── create.php          # POST /api/create — JSON API
-│   ├── toggle.php          # POST /api/toggle — toggle active state
-│   └── delete.php          # POST /api/delete — delete link
-│
-├── templates/
-│   ├── header.php          # HTML head + navigation
-│   ├── footer.php          # HTML footer + JS
-│   ├── 404.php             # Clean 404 page
-│   └── error.php           # Generic error page (disabled/expired)
-│
-├── assets/
-│   ├── css/
-│   │   └── style.css       # Full SaaS-style design system
-│   └── js/
-│       └── app.js          # Clipboard, alerts, confirm dialogs
-│
-└── database/
-    └── schema.sql          # Full MySQL schema with indexes & FKs
-```
-
----
-
 ## Routes
 
 | URL                    | Method | Description                        |
